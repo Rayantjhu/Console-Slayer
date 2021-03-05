@@ -17,3 +17,10 @@ all_weapons = {
     "Beginner Pistol" : Weapon("Beginner Pistol", 35, 350, 5, 1, "floor1" )
   }
 }
+
+all_gear = {
+  "entrance" : {
+    "Rookie Hoodie" : Gear("Rookie Hoodie", 10, 5, "entrance"),
+    "Damaged Helmet" : Gear("Damaged Helmet", 15, 15, "entrance")
+  }
+}

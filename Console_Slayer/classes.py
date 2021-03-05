@@ -1,5 +1,5 @@
 class Player():
-  def __init__(self, name, health, defense, gear, level, purse, weapon, effect, first_timer):
+  def __init__(self, name, health, defense, gear, level, purse, weapon, effect, first_timer, floor_beaten, unlocked_weapons):
     self.name = name
     self.health = health
     self.defense = defense
@@ -9,6 +9,8 @@ class Player():
     self.weapon = weapon
     self.effect = effect
     self.first_timer = first_timer
+    self.floor_beaten = floor_beaten
+    self.unlocked_weapons = unlocked_weapons
 
 player = Player(
   name = None,
@@ -19,7 +21,9 @@ player = Player(
   purse = 0,
   weapon = None, 
   effect = None,
-  first_timer = True
+  first_timer = True,
+  floor_beaten = None,
+  unlocked_weapons = None
 )
 
 class Enemy():
@@ -43,11 +47,12 @@ class Weapon():
     self.crit_damage = crit_damage
     self.floor = floor
 
-class Armor():
-  def __init__(self, name, defense, price):
+class Gear():
+  def __init__(self, name, defense, price, floor):
     self.name = name
     self.defense = defense
     self.price = price
+    self.floor = floor
 
 class Potion():
   def __init__(self, name, boost, price):
