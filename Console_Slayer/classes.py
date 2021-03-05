@@ -1,8 +1,9 @@
 class Player():
-  def __init__(self, name, health, defense, level, purse, weapon, effect, first_timer):
+  def __init__(self, name, health, defense, gear, level, purse, weapon, effect, first_timer):
     self.name = name
     self.health = health
     self.defense = defense
+    self.gear = gear
     self.level = level
     self.purse = purse
     self.weapon = weapon
@@ -13,9 +14,10 @@ player = Player(
   name = None,
   health = 100,
   defense = 0,
+  gear = None,
   level = 1,
   purse = 0,
-  weapon = "Fists", 
+  weapon = None, 
   effect = None,
   first_timer = True
 )
@@ -30,7 +32,7 @@ class Enemy():
     self.coin_drop_range = coin_drop_range
 
 class Weapon():
-  def __init__(self, name, damage, price, crit_chance, crit_damage):
+  def __init__(self, name, damage, price, crit_chance, crit_damage, floor):
     self.name = name
     self.damage = damage
     self.price = price
@@ -39,6 +41,7 @@ class Weapon():
     # it will be a multiplier of the base damage. Will be in a range of 0-10
     # 1 = dmg * 1.1; 2 = dmg * 1.2; .. 10 = dmg * 2
     self.crit_damage = crit_damage
+    self.floor = floor
 
 class Armor():
   def __init__(self, name, defense, price):
