@@ -13,7 +13,6 @@ def equipped_gear():
   print("~~~~~~~~~~~~~~~~~~~~~" + "~" * len(str(player.gear)))
   print("\n")
 
-
 def equipped_weapon():
   time.sleep(0.5)
   print("\n~~~~~~~~~~~~~~~~~~~~~" + "~" * len(str(player.weapon.name)))

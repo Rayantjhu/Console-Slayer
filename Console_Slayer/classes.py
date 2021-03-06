@@ -1,5 +1,5 @@
 class Player():
-  def __init__(self, name, health, defense, gear, level, purse, weapon, effect, first_timer, floor_beaten, unlocked_weapons):
+  def __init__(self, name, health, defense, gear, level, purse, weapon, effect, first_timer, floor_beaten, unlocked_weapons, unlocked_gear):
     self.name = name
     self.health = health
     self.defense = defense
@@ -11,6 +11,7 @@ class Player():
     self.first_timer = first_timer
     self.floor_beaten = floor_beaten
     self.unlocked_weapons = unlocked_weapons
+    self.unlocked_gear = unlocked_gear
 
 player = Player(
   name = None,
@@ -23,7 +24,8 @@ player = Player(
   effect = None,
   first_timer = True,
   floor_beaten = None,
-  unlocked_weapons = None
+  unlocked_weapons = None,
+  unlocked_gear = None
 )
 
 class Enemy():
