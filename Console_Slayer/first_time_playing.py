@@ -65,15 +65,27 @@ def first_time_playing():
       user_input = input("Please try again. : ")
       continue
   
+  # Shop Tutorial
+  print_and_sleep("\nGood", 1)
+  print_and_sleep("Now you know some basics about your items!", 2.5)
+  print_and_sleep("But fighting without any weapons isn't very ideal.", 3)
+  print_and_sleep("So..", 1)
+  print_and_sleep("We're going to have to take a look at the shop.", 3)
+  print_and_sleep("\nThere are 2 types of shops:", 1.5)
+  print_and_sleep("Weapons shop,", 1)
+  print_and_sleep("Gear shop.", 1)
+  print_and_sleep("Try to call the weapons shop by typing 'weapons shop'.", 1)
+
+  user_input = input(": ")
 
 def gear_explanation():
-  print_and_sleep("As you can see you do not have any gear equipped.", 2)
-  print_and_sleep("Gear can be used to achieve higher defense.", 2)
-  print_and_sleep("And it can also give you more HP.", 2)
+  print_and_sleep("As you can see you do not have any gear equipped.", 3)
+  print_and_sleep("Gear can be used to achieve higher defense.", 3)
+  print_and_sleep("And it can also give you more HP.", 3)
 
 def weapon_explanation():
-  print_and_sleep("Weapons are used to deal damage to your enemies.", 2)
-  print_and_sleep("They also can deal critical damage. Which comes with a crit chance.", 2)
+  print_and_sleep("Weapons are used to deal damage to your enemies.", 3)
+  print_and_sleep("They also can deal critical damage. Which comes with a crit chance.", 3.5)
 
 def gear_tutorial():
   equipped_gear()
@@ -91,6 +103,7 @@ def gear_tutorial():
       while not stop2:
         if user_input.lower() == "weapon stats":
           weapon_stats()
+          print_and_sleep("You don't have any gear yet so you don't see any stats right now.", 3)
           print_and_sleep("Same goes for 'gear stats'.", 2)
           stop2 = True
           stop = True

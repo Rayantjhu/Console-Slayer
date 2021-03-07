@@ -50,9 +50,10 @@ class Weapon():
     self.floor = floor
 
 class Gear():
-  def __init__(self, name, defense, price, floor):
+  def __init__(self, name, defense, health, price, floor):
     self.name = name
     self.defense = defense
+    self.health = health
     self.price = price
     self.floor = floor
 

@@ -15,6 +15,7 @@ def help():
   # print("~~   weapon          |   shows your equipped weapon                ~~")
   # print("~~   weapon          |   shows your equipped weapon                ~~")
   print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~") 
+  time.sleep(1)
 
 def print_and_sleep(text, seconds):
   print(text)
@@ -26,6 +27,7 @@ def equipped_gear():
   print(f"~~     Gear : {player.gear}     ~~")
   print("~~~~~~~~~~~~~~~~~~~~~" + "~" * len(str(player.gear)))
   print("\n")
+  time.sleep(1)
 
 def equipped_weapon():
   time.sleep(0.5)
@@ -33,6 +35,7 @@ def equipped_weapon():
   print(f"~~    Weapon : {player.weapon.name}    ~~")
   print("~~~~~~~~~~~~~~~~~~~~~" + "~" * len(str(player.weapon.name)))
   print("\n")
+  time.sleep(1)
 
 def weapon_stats():
   time.sleep(0.5)
@@ -44,6 +47,7 @@ def weapon_stats():
     print(f"~~    crit damage : {all_weapons[player.weapon.floor][player.weapon.name].crit_damage}    " + " " * (len(str(player.weapon.name))-len(str(player.weapon.crit_damage))-5) + "~~")
     print("~~~~~~~~~~~~~~~~~~~~~" + "~" * len(str(player.weapon.name)))
     print("\n")
+    time.sleep(1)
   elif len(str(player.weapon.name)) < 7:
     print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     print(f"~~    Weapon : {player.weapon.name}     ~~")
@@ -52,6 +56,7 @@ def weapon_stats():
     print(f"~~    crit damage : {all_weapons[player.weapon.floor][player.weapon.name].crit_damage}    " + "~~")
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     print("\n")
+    time.sleep(1)
 
 def gear_stats():
   time.sleep(0.5)
@@ -60,16 +65,19 @@ def gear_stats():
     print("~~   Gear : None   ~~")
     print("~~~~~~~~~~~~~~~~~~~~~")
     print("\n")
+    time.sleep(1)
   else:
     print("\n~~~~~~~~~~~~~~~~~~~~" + "~" * len(player.gear.name))
     print(f"~~    Gear : {player.gear.name}     ~~")
     print(f"~~    Defense : {player.gear.defense}" + (" " * len(player.gear.name)) + "~~")
     print("~~~~~~~~~~~~~~~~~~~~" + "~" * len(player.gear.name))
     print("\n")
+    time.sleep(1)
 
 def edit_name():
   time.sleep(0.5)
   print_and_sleep("Type your new desired name.", 0.5)
   player.name = input(": ")
   print_and_sleep(f"Your name has succesfully changed to : {player.name}", 0.5)
+  time.sleep(1)
 

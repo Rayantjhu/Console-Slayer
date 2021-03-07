@@ -1,6 +1,6 @@
 from classes import *
 
-# name, damage, price, crit_chance, crit_damage
+# name, damage, price, crit_chance, crit_damage, floor
 all_weapons = {
   "entrance" : {
     "Fists" : Weapon("Fists", 0, 0, 0, 0, "entrance" ),
@@ -18,9 +18,10 @@ all_weapons = {
   }
 }
 
+# name, defense, health, price, floor
 all_gear = {
   "entrance" : {
-    "Rookie Hoodie" : Gear("Rookie Hoodie", 10, 5, "entrance"),
-    "Damaged Helmet" : Gear("Damaged Helmet", 15, 15, "entrance")
+    "Rookie Hoodie" : Gear("Rookie Hoodie", 10, 0, 5, "entrance"),
+    "Damaged Helmet" : Gear("Damaged Helmet", 15, 0, 15, "entrance")
   }
 }
