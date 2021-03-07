@@ -51,30 +51,19 @@ def first_time_playing():
   user_input = input("Go ahead and try it out! : ")
 
   # Calls Tutorial
-  if user_input.lower() == "gear":
-    gear_tutorial()
-
-
-  elif user_input.lower() == "weapon":
-    equipped_weapon()
-    weapon_explanation()
-    #user_input = input("Now try the same thing with 'gear'. : ")
-    user_input = input("You may try to call your weapon stats. : ")
-
-    if user_input.lower() == "weapon stats":
-      weapon_stats()
-      user_input = input("Now try to call the gear you have equipped. : ")
-
-      if user_input.lower() == "gear":
-        gear_explanation()
-
+  stop = False
+  while not stop:
     if user_input.lower() == "gear":
-      equipped_gear()
-      gear_explanation()
-  
-  else:
-    print_and_sleep("Uhm..", 1)
-    print_and_sleep("That's not a what I asked.", 2)
+      gear_tutorial()
+      stop = True
+    elif user_input.lower() == "weapon":
+      weapon_tutorial()
+      stop = True
+    else:
+      print_and_sleep("Uhm..", 1)
+      print_and_sleep("That's not a what I asked.", 2)
+      user_input = input("Please try again. : ")
+      continue
 
 def gear_explanation():
   print_and_sleep("As you can see you do not have any gear equipped.", 2)
@@ -84,7 +73,6 @@ def gear_explanation():
 def weapon_explanation():
   print_and_sleep("Weapons are used to deal damage to your enemies.", 2)
   print_and_sleep("They also can deal critical damage. Which comes with a crit chance.", 2)
-  print_and_sleep("These stats of your weapon can be found by typing 'weapon stats' in the console.", 3)
 
 def gear_tutorial():
   equipped_gear()
@@ -95,6 +83,7 @@ def gear_tutorial():
     if user_input.lower() == "weapon":
       equipped_weapon()
       weapon_explanation()
+      print_and_sleep("These stats of your weapon can be found by typing 'weapon stats' in the console.", 3)
       user_input = input("You can try that aswell. : ")
       stop = True
       stop2 = False
@@ -123,6 +112,49 @@ def gear_tutorial():
         else:
           print_and_sleep("That's not the correct input!", 2)
           user_input = input("Please try again. : ")
+    else:
+      print_and_sleep("That's not the correct input!", 2)
+      user_input = input("Please try again. : ")
+      continue
+
+def weapon_tutorial():
+  equipped_weapon()
+  weapon_explanation()
+  stop = False
+  user_input = input("Now try the same thing with 'gear'. : ")
+  while not stop:
+    if user_input.lower() == "gear":
+      equipped_gear()
+      gear_explanation()
+      print_and_sleep("You can see the stats of your gear by typing 'gear stats' in the console.", 2)
+      user_input = input("You can try that aswell. : ")
+      stop2 = False
+      stop = True
+      while not stop2:
+        if user_input.lower() == "gear stats":
+          gear_stats()
+          print_and_sleep("Same thing can be done for your weapons by typing 'weapon stats'.", 2)
+
+          print_and_sleep("If you wish to try that you may.", 1)
+          print_and_sleep("If you wish to continue. Type 'continue'.", 1)
+          user_input = input(": ")
+          stop2 = True
+          stop3 = False
+          while not stop3:
+            if user_input.lower() == "weapon stats":
+              weapon_stats()
+              stop3 = True
+            elif user_input.lower() == "continue":
+              stop3 = True
+              continue
+            else:
+              print_and_sleep("That's not the correct input!", 2)
+              user_input = input("Please try again. : ")
+              continue
+        else:
+          print_and_sleep("That's not the correct input!", 2)
+          user_input = input("Please try again. : ")
+          continue
     else:
       print_and_sleep("That's not the correct input!", 2)
       user_input = input("Please try again. : ")
