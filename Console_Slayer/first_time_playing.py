@@ -64,6 +64,7 @@ def first_time_playing():
       print_and_sleep("That's not a what I asked.", 2)
       user_input = input("Please try again. : ")
       continue
+  
 
 def gear_explanation():
   print_and_sleep("As you can see you do not have any gear equipped.", 2)

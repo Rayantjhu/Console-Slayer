@@ -3,6 +3,7 @@ import time
 from items import * 
 
 def help():
+  time.sleep(0.5)
   print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")  
   print("~~   function name   |   functionality                             ~~")
   print("~~  -------------------------------------------------------------  ~~")
@@ -10,7 +11,7 @@ def help():
   print("~~   gear            |   shows your equipped gear                  ~~")
   print("~~   weapon stats    |   shows the stats of your equipped weapon   ~~")
   print("~~   gear stats      |   shows the stats of your equipped gear     ~~")
-  # print("~~   weapon          |   shows your equipped weapon                ~~")
+  print("~~   edit name       |   edits your user name                      ~~")
   # print("~~   weapon          |   shows your equipped weapon                ~~")
   # print("~~   weapon          |   shows your equipped weapon                ~~")
   print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~") 
@@ -66,4 +67,9 @@ def gear_stats():
     print("~~~~~~~~~~~~~~~~~~~~" + "~" * len(player.gear.name))
     print("\n")
 
-help()
+def edit_name():
+  time.sleep(0.5)
+  print_and_sleep("Type your new desired name.", 0.5)
+  player.name = input(": ")
+  print_and_sleep(f"Your name has succesfully changed to : {player.name}", 0.5)
+
