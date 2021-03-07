@@ -2,6 +2,19 @@ from classes import *
 import time 
 from items import * 
 
+def help():
+  print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")  
+  print("~~   function name   |   functionality                             ~~")
+  print("~~  -------------------------------------------------------------  ~~")
+  print("~~   weapon          |   shows your equipped weapon                ~~")
+  print("~~   gear            |   shows your equipped gear                  ~~")
+  print("~~   weapon stats    |   shows the stats of your equipped weapon   ~~")
+  print("~~   gear stats      |   shows the stats of your equipped gear     ~~")
+  # print("~~   weapon          |   shows your equipped weapon                ~~")
+  # print("~~   weapon          |   shows your equipped weapon                ~~")
+  # print("~~   weapon          |   shows your equipped weapon                ~~")
+  print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~") 
+
 def print_and_sleep(text, seconds):
   print(text)
   time.sleep(seconds)
@@ -52,3 +65,5 @@ def gear_stats():
     print(f"~~    Defense : {player.gear.defense}" + (" " * len(player.gear.name)) + "~~")
     print("~~~~~~~~~~~~~~~~~~~~" + "~" * len(player.gear.name))
     print("\n")
+
+help()
